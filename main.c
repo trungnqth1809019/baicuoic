@@ -1,42 +1,52 @@
 #include <stdio.h>
 #include <mem.h>
-
-char cword[5] = {'a', 'e', 'i', 'o', 'u'};
-char cword2[5] = {'A', 'E', 'I', 'O', 'U'};
-int idem[5];
-float iphantram[5];
-
-void nOfcharacters(char s1[]) {
-    for (int i = 0; i < 5; i++) {
-        while (strchr(s1, cword[i]) == NULL || s1, cword2[i] == NULL) {
-            idem[i]++;
-        };
+float tinh(int ia, int idai){
+    return     (float) ia * 100 / idai;
     }
-}
-
-void pOftotal(char s1[]) {
-    int ia;
-    ia = strlen(s1);
-    for (int i = 0; i < 5; i++) {
-        iphantram[i] = idem[i] / ia * 100;
-    }
-}
-
-
 int main() {
-    char s1[50];
+    char string[50];
+    int ia = 0, ie = 0, ii = 0, io = 0, iu = 0, idai;
     printf("Enter string:");
-    gets(s1);
-    nOfcharacters(s1);
-    pOftotal(s1);
-    printf("number of characters:\n");
-    for (int i = 0; i < 5; i++) {
-        printf("%c: %d", cword[i], idem[i]);
+    gets(string);
+    idai = strlen(string);
+    for (int i = 0; i < idai; i++) {
+        if (string[i] == 'a') {
+            ia++;
+        }
     }
-    printf("Percentages of total:\n");
-    for (int i = 0; i < 5; i++) {
-        printf("%c: %d", cword[i], iphantram[i]);
+    idai = strlen(string);
+    for (int i = 0; i < idai; i++) {
+        if (string[i] == 'e') {
+            ie++;
+        }
+    }
+    idai = strlen(string);
+    for (int i = 0; i < idai; i++) {
+        if (string[i] == 'i') {
+            ii++;
+        }
+    }
+    idai = strlen(string);
+    for (int i = 0; i < idai; i++) {
+        if (string[i] == 'o') {
+            io++;
+        }
+    }
+    idai = strlen(string);
+    for (int i = 0; i < idai; i++) {
+        if (string[i] == 'u') {
+            iu++;
+        }
     }
 
+
+
+    printf("number of characters:\n");
+    printf(" %c: %d; %c: %d; %c: %d; %c: %d; %c: %d;", 'a', ia, 'e', ie, 'i', ii, 'o', io, 'u', iu);
+    printf("\nPercentages of total:\n");
+    printf(" %c: %.2f; %c: %.2f; %c: %.2f; %c: %.2f; %c: %.2f ;",'a', tinh(ia,idai), 'e', tinh(ie,idai), 'i',tinh(ii,idai), 'o',tinh(io,idai), 'u', tinh(iu,idai));
     return 0;
 }
+
+//
+//
