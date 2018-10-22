@@ -11,7 +11,7 @@ void concat(char s1[], char s2[]) {
 
 int main() {
     printf("Enter the first string: ");
-   gets(s1);
+    gets(s1);
     printf("Enter the second string: ");
     gets(s2);
     concat(s1, s2);
